@@ -1,6 +1,6 @@
 pre-commit:
   commands:
     lint:
-      tags: frontend style
-      glob: "*.{js,ts}"
+      tags: style
+      glob: "*.ts"
       run: npx eslint --fix {staged_files} && git add {staged_files}
