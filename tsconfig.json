@@ -22,6 +22,6 @@
 		"types": ["node"],
 		"lib": ["ESNext"]
 	},
-	"include": ["src/**/*.ts", "tests/main.test.ts"],
-	"exclude": ["node_modules", "**/*.test.ts"]
+	"include": ["src/**/*.ts"],
+	"exclude": ["node_modules"]
 }

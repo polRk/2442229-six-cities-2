@@ -19,11 +19,12 @@
 	"bin": "./dist/cli.js",
 	"files": ["dist"],
 	"scripts": {
-		"start": "npm run build && node ./dist/main.js",
+		"dev": "tsx watch ./src/index.ts",
+		"start": "node ./dist/index.ts",
 		"ts": "tsc --noEmit",
 		"lint": "biome ci src/",
 		"test": "node --loader tsx/esm --no-warnings --test ./**/*.test.ts",
-		"test:watch": "npm run test -- --watch",
+		"test:watch": "node --loader tsx/esm --no-warnings --test --watch ./**/*.test.ts",
 		"build": "pkgroll --target=es2022 --target=node18.18.0 --minify --sourcemap",
 		"build:watch": "pkgroll --watch"
 	},
