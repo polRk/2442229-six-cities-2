@@ -2,7 +2,11 @@
 	"name": "six-cities",
 	"version": "4.0.0",
 	"description": "Проект «Шесть городов» от HTML Academy",
-	"keywords": ["rest", "api", "node.js"],
+	"keywords": [
+		"rest",
+		"api",
+		"node.js"
+	],
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.cts",
@@ -17,21 +21,30 @@
 		}
 	},
 	"bin": "./dist/cli.js",
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
+		"cli": "./dist/cli.js",
 		"dev": "tsx watch ./src/index.ts",
-		"start": "node ./dist/index.ts",
+		"dev:cli": "tsx watch ./src/cli.ts",
+		"start": "node ./dist/index.js",
 		"ts": "tsc --noEmit",
 		"lint": "eslint src/ --ext .ts",
-		"test": "node --loader tsx/esm --no-warnings --test ./**/*.test.ts",
-		"test:watch": "node --loader tsx/esm --no-warnings --test --watch ./**/*.test.ts",
-		"build": "pkgroll --target=es2022 --target=node18.18.0 --minify --sourcemap",
-		"build:watch": "pkgroll --watch"
+		"test": "node --expose-internals --loader tsx/esm --no-warnings --test ./**/*.test.ts",
+		"test:ci": "c8 --check-coverage --lines 95 npm test",
+		"test:watch": "node --expose-internals --loader tsx/esm --no-warnings --test --watch ./**/*.test.ts",
+		"build": "pkgroll --target=node18 --export-condition=node --sourcemap",
+		"build:watch": "npm run build -- --watch"
+	},
+	"dependencies": {
+		"chalk": "^5.3.0"
 	},
 	"devDependencies": {
 		"@types/node": "20.7.1",
 		"@typescript-eslint/eslint-plugin": "6.7.3",
 		"@typescript-eslint/parser": "6.7.3",
+		"c8": "^8.0.1",
 		"eslint": "8.50.0",
 		"eslint-config-htmlacademy": "10.0.1",
 		"pkgroll": "^1.11.1",
