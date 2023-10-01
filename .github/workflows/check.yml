@@ -27,3 +27,7 @@ jobs:
       - name: Run checks
         run: |
           if [ -f 'package.json' ]; then npm run lint; else echo 'Skip. The file package.json does not exist'; fi
+
+      - name: Run build
+        run: |
+          if [ -f 'package.json' ]; then npm run build; else echo 'Skip. The file package.json does not exist'; fi

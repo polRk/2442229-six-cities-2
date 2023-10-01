@@ -2,26 +2,18 @@
 	"name": "six-cities",
 	"version": "4.0.0",
 	"description": "Проект «Шесть городов» от HTML Academy",
-	"keywords": [
-		"rest",
-		"api",
-		"node.js"
-	],
+	"keywords": ["rest", "api", "node.js"],
 	"main": "./dist/main.js",
 	"scripts": {
 		"start": "npm run build && node ./dist/main.js",
 		"build": "npm run clean && npm run compile",
-		"lint": "eslint src/ --ext .ts",
+		"lint": "biome ci src/",
 		"compile": "tsc -p tsconfig.json",
-		"clean": "rimraf dist"
+		"clean": "rm -rf dist"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^1.2.2",
 		"@types/node": "20.7.1",
-		"@typescript-eslint/eslint-plugin": "6.7.3",
-		"@typescript-eslint/parser": "6.7.3",
-		"eslint": "8.50.0",
-		"eslint-config-htmlacademy": "10.0.1",
-		"rimraf": "5.0.5",
 		"typescript": "5.2.2"
 	},
 	"type": "module",
