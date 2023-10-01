@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "ES2020",
+		"target": "ES2022",
 		"module": "ESNext",
 		"moduleResolution": "Node",
 		"strict": true,
@@ -14,14 +14,25 @@
 		"importHelpers": true,
 		"skipLibCheck": true,
 		"esModuleInterop": true,
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"verbatimModuleSyntax": true,
 		"allowSyntheticDefaultImports": true,
 		"experimentalDecorators": true,
 		"sourceMap": true,
 		"outDir": "./dist",
 		"emitDecoratorMetadata": true,
-		"types": ["node"],
-		"lib": ["ESNext"]
+		"types": [
+			"node"
+		],
+		"lib": [
+			"ESNext"
+		],
 	},
-	"include": ["src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"include": [
+		"src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
 }
