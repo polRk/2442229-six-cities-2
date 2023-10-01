@@ -11,3 +11,11 @@ plugins:
 extends:
   - "plugin:@typescript-eslint/recommended"
   - "htmlacademy/node"
+rules:
+  indent: ["error", "tab"]
+  quotes: ["error", "double"]
+overrides:
+  - files: ["*.json"]
+    rules:
+      semi: off
+      no-unused-expressions: off
