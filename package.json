@@ -20,6 +20,7 @@
 	"files": ["dist"],
 	"scripts": {
 		"start": "npm run build && node ./dist/main.js",
+		"ts": "tsc --noEmit",
 		"lint": "biome ci src/",
 		"test": "node --loader tsx/esm --no-warnings --test ./**/*.test.ts",
 		"test:watch": "npm run test -- --watch",
