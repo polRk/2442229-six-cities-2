@@ -3,21 +3,35 @@
 	"version": "4.0.0",
 	"description": "Проект «Шесть городов» от HTML Academy",
 	"keywords": ["rest", "api", "node.js"],
-	"main": "./dist/main.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.cts",
+	"exports": {
+		"require": {
+			"types": "./dist/index.d.cts",
+			"default": "./dist/index.cjs"
+		},
+		"import": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"bin": "./dist/cli.js",
+	"files": ["dist"],
 	"scripts": {
 		"start": "npm run build && node ./dist/main.js",
-		"build": "npm run clean && npm run compile",
-		"clean": "rm -rf dist",
-		"compile": "tsc -p tsconfig.json",
 		"lint": "biome ci src/",
-		"test": "node --loader tsx --no-warnings --test ./**/*.test.ts",
-		"test:watch": "npm run test -- --watch"
+		"test": "node --loader tsx/esm --no-warnings --test ./**/*.test.ts",
+		"test:watch": "npm run test -- --watch",
+		"build": "pkgroll --target=es2022 --target=node18.18.0 --minify --sourcemap",
+		"build:watch": "pkgroll --watch"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.2.2",
 		"@types/node": "20.7.1",
-		"typescript": "5.2.2",
-		"tsx": "^3.13.0"
+		"pkgroll": "^1.11.1",
+		"tsx": "^3.13.0",
+		"typescript": "5.2.2"
 	},
 	"type": "module",
 	"engines": {
