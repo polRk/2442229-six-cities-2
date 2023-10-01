@@ -14,7 +14,7 @@ if (options && !options.startsWith("--")) {
 switch (command) {
 case "import":
 case "--import":
-	await importCommand();
+	importCommand();
 	break;
 case "version":
 case "--version":
