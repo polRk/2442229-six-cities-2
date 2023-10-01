@@ -2,5 +2,5 @@ pre-commit:
   commands:
     lint:
       tags: style
-      glob: "*.{js,ts,json}"
-      run: npx biome check --apply {staged_files} && git add {staged_files}
+      glob: "*.ts"
+      run: npx eslint --fix {staged_files} && git add {staged_files}
