@@ -7,14 +7,17 @@
 	"scripts": {
 		"start": "npm run build && node ./dist/main.js",
 		"build": "npm run clean && npm run compile",
-		"lint": "biome ci src/",
+		"clean": "rm -rf dist",
 		"compile": "tsc -p tsconfig.json",
-		"clean": "rm -rf dist"
+		"lint": "biome ci src/",
+		"test": "node --loader tsx --no-warnings --test ./**/*.test.ts",
+		"test:watch": "npm run test -- --watch"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.2.2",
 		"@types/node": "20.7.1",
-		"typescript": "5.2.2"
+		"typescript": "5.2.2",
+		"tsx": "^3.13.0"
 	},
 	"type": "module",
 	"engines": {
