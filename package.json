@@ -20,7 +20,7 @@
 	"files": ["dist"],
 	"scripts": {
 		"start": "npm run build && node ./dist/main.js",
-		"lint": "biome ci src/",
+		"lint": "eslint src/",
 		"test": "node --loader tsx/esm --no-warnings --test ./**/*.test.ts",
 		"test:watch": "npm run test -- --watch",
 		"build": "pkgroll --target=es2022 --target=node18.18.0 --minify --sourcemap",
@@ -35,7 +35,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=18.18.0",
+		"node": ">=20",
 		"npm": ">=9"
 	}
 }
